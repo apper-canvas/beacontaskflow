@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Complete quarterly financial report",
+    "description": "Analyze Q3 performance metrics and prepare comprehensive financial summary for stakeholders",
+    "categoryId": "1",
+    "priority": "high",
+    "status": "in-progress",
+    "dueDate": "2024-01-15T09:00:00.000Z",
+    "createdAt": "2024-01-10T08:00:00.000Z",
+    "completedAt": null,
+    "order": 0
+  },
+  {
+    "id": "2",
+    "title": "Weekly grocery shopping",
+    "description": "Pick up organic vegetables, fresh fruits, and pantry essentials for the week",
+    "categoryId": "2",
+    "priority": "medium",
+    "status": "pending",
+    "dueDate": "2024-01-13T10:00:00.000Z",
+    "createdAt": "2024-01-11T14:30:00.000Z",
+    "completedAt": null,
+    "order": 1
+  },
+  {
+    "id": "3",
+    "title": "Morning workout routine",
+    "description": "30-minute cardio session followed by strength training focusing on core and upper body",
+    "categoryId": "3",
+    "priority": "high",
+    "status": "completed",
+    "dueDate": "2024-01-12T07:00:00.000Z",
+    "createdAt": "2024-01-11T22:00:00.000Z",
+    "completedAt": "2024-01-12T07:45:00.000Z",
+    "order": 2
+  },
+  {
+    "id": "4",
+    "title": "Read 'The Psychology of Money'",
+    "description": "Continue reading chapter 8-12, take notes on key investment principles and behavioral finance concepts",
+    "categoryId": "4",
+    "priority": "low",
+    "status": "pending",
+    "dueDate": "2024-01-20T20:00:00.000Z",
+    "createdAt": "2024-01-09T16:45:00.000Z",
+    "completedAt": null,
+    "order": 3
+  },
+  {
+    "id": "5",
+    "title": "Plan weekend hiking trip",
+    "description": "Research trails, check weather forecast, pack gear, and coordinate with friends for Saturday adventure",
+    "categoryId": "5",
+    "priority": "medium",
+    "status": "pending",
+    "dueDate": "2024-01-14T12:00:00.000Z",
+    "createdAt": "2024-01-08T19:20:00.000Z",
+    "completedAt": null,
+    "order": 4
+  }
+]
