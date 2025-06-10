@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Heading from '@/components/atoms/Heading';
+import Button from '@/components/atoms/Button';
 
-function EmptyState({ title, description, actionLabel, onAction }) {
+const EmptyState = ({ title, description, actionLabel, onAction }) => {
   return (
     <motion.div
       initial={{ scale: 0.9, opacity: 0 }}
@@ -18,27 +21,32 @@ function EmptyState({ title, description, actionLabel, onAction }) {
         </div>
       </motion.div>
       
-      <h3 className="text-xl font-heading font-semibold text-surface-900 mb-2">
+      <Heading as="h3" className="text-xl mb-2">
         {title}
-      </h3>
+      </Heading>
       
       <p className="text-surface-600 mb-6 max-w-sm mx-auto">
         {description}
       </p>
       
       {actionLabel && onAction && (
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <Button
           onClick={onAction}
-          className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:brightness-110 transition-all"
+          className="inline-flex items-center space-x-2 bg-primary text-white hover:brightness-110"
         >
           <ApperIcon name="Plus" size={18} />
           <span>{actionLabel}</span>
-        </motion.button>
+        </Button>
       )}
     </motion.div>
   );
-}
+};
+
+EmptyState.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  actionLabel: PropTypes.string,
+  onAction: PropTypes.func,
+};
 
 export default EmptyState;

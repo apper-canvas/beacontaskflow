@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import PropTypes from 'prop-types';
 
-function SearchBar() {
+const SearchBar = ({ onSearch = () => {} }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Search functionality will be implemented in task filtering
-    console.log('Searching for:', searchTerm);
+    onSearch(searchTerm);
   };
 
   return (
-    <form onSubmit={handleSearch} className="relative">
+    <form onSubmit={handleSubmit} className="relative">
       <div className="relative">
         <ApperIcon 
           name="Search" 
@@ -28,6 +28,10 @@ function SearchBar() {
       </div>
     </form>
   );
-}
+};
+
+SearchBar.propTypes = {
+  onSearch: PropTypes.func,
+};
 
 export default SearchBar;

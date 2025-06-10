@@ -1,7 +1,10 @@
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import ApperIcon from './ApperIcon';
+import ApperIcon from '@/components/ApperIcon';
+import Heading from '@/components/atoms/Heading';
+import Button from '@/components/atoms/Button';
 
-function ErrorState({ message, onRetry }) {
+const ErrorState = ({ message, onRetry }) => {
   return (
     <motion.div
       initial={{ scale: 0.9, opacity: 0 }}
@@ -12,27 +15,30 @@ function ErrorState({ message, onRetry }) {
         <ApperIcon name="AlertCircle" className="w-12 h-12 text-error" />
       </div>
       
-      <h3 className="text-xl font-heading font-semibold text-surface-900 mb-2">
+      <Heading as="h3" className="text-xl mb-2">
         Something went wrong
-      </h3>
+      </Heading>
       
       <p className="text-surface-600 mb-6 max-w-sm mx-auto">
         {message}
       </p>
       
       {onRetry && (
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+        <Button
           onClick={onRetry}
-          className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:brightness-110 transition-all"
+          className="inline-flex items-center space-x-2 bg-primary text-white hover:brightness-110"
         >
           <ApperIcon name="RefreshCw" size={18} />
           <span>Try Again</span>
-        </motion.button>
+        </Button>
       )}
     </motion.div>
   );
-}
+};
+
+ErrorState.propTypes = {
+  message: PropTypes.string.isRequired,
+  onRetry: PropTypes.func,
+};
 
 export default ErrorState;
