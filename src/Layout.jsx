@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { routeArray } from './config/routes';
-import ApperIcon from './components/ApperIcon';
-import SearchBar from './components/SearchBar';
+import { routeArray } from '@/config/routes';
+import ApperIcon from '@/components/ApperIcon';
+import SearchBar from '@/components/molecules/SearchBar';
 
 function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
