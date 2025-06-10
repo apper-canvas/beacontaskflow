@@ -1,2 +1,6 @@
-export { default as taskService } from './api/taskService';
-export { default as categoryService } from './api/categoryService';
+// Apper backend services
+import taskService from './api/taskService';
+import categoryService from './api/categoryService';
+
+// Export services
+export { taskService, categoryService };
